@@ -16,7 +16,7 @@ interface Props {
   color: string;
   size: number;
   fontWeight: string;
-  textAlign: string;
+  textAlign: React.CSSProperties['textAlign'];
   marginTop: number;
 }
 
@@ -24,3 +24,18 @@ export const ManyProps7 = ({ initial, step, min, max, label, color, size, fontWe
   const { count, increment, decrement } = useCounter(initial, step);
   return <div style={{ color, fontSize: size, fontWeight, textAlign, marginTop }}>{label}: {count}</div>;
 };
+
+export const Usage7 = () => (
+  <ManyProps7
+    initial={0}
+    step={2}
+    min={0}
+    max={20}
+    label="Count"
+    color="red"
+    size={16}
+    fontWeight="bold"
+    textAlign="center"
+    marginTop={10}
+  />
+);

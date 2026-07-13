@@ -3,8 +3,8 @@ import React, { memo } from 'react';
 interface Props {
   name: string;
   age: number;
-  city: string;
-  country: string;
+  city?: string;
+  country?: string;
   email: string;
   phone: string;
   website: string;
@@ -15,15 +15,43 @@ interface Props {
   department: string;
 }
 
-const ManyProps10 = memo(({ name, age, city, country, email, phone, website, company, position, salary, bonus, department }: Props) => {
+function ManyProps10Component({
+  name,
+  age,
+  city = 'Unknown',
+  country = 'Unknown',
+  email,
+  phone,
+  website,
+  company,
+  position,
+  salary,
+  bonus,
+  department,
+}: Props) {
   return (
     <div>
       {name} - {age} - {city}
     </div>
   );
-});
-ManyProps10.defaultProps = {
-  city: 'Unknown',
-  country: 'Unknown',
-};
+}
+
+const ManyProps10 = memo(ManyProps10Component);
 export default ManyProps10;
+
+export const Usage10 = () => (
+  <ManyProps10
+    name="Alice"
+    age={25}
+    city="London"
+    country="UK"
+    email="alice@example.com"
+    phone="123"
+    website="example.com"
+    company="Acme"
+    position="Developer"
+    salary={50000}
+    bonus={5000}
+    department="Engineering"
+  />
+);

@@ -32,3 +32,20 @@ export const ManyProps9 = (props: Props) => {
   const { variant, size, disabled, loading, fullWidth, className, style, children, ariaLabel, role } = props;
   return <button className={className} style={style} disabled={disabled || loading} aria-label={ariaLabel} role={role}>{children}</button>;
 };
+
+export const Usage9 = () => (
+  <ManyProps9
+    variant="primary"
+    size="md"
+    disabled={false}
+    loading={false}
+    fullWidth={true}
+    className="btn"
+    style={{ color: 'white' }}
+    href="/link"
+    target="_blank"
+    children="Click"
+    ariaLabel="Button"
+    role="button"
+  />
+);

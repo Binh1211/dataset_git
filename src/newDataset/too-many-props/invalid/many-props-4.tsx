@@ -17,3 +17,17 @@ export const ManyProps4 = ({ items, searchTerm, sortBy, page, limit, onSelect, o
   const handleSelect = useCallback((id: string) => onSelect(id), [onSelect]);
   return <div>{filtered.length}</div>;
 };
+
+export const Usage4 = () => (
+  <ManyProps4
+    items={['a', 'b', 'c']}
+    searchTerm="a"
+    sortBy="asc"
+    page={1}
+    limit={10}
+    onSelect={(id) => {}}
+    onDelete={(id) => {}}
+    onEdit={(id, data) => {}}
+    placeholder="Search..."
+  />
+);

@@ -1,4 +1,5 @@
-import React, { memo, ReactNode } from 'react';
+import React, { memo } from 'react';
+import type { ReactNode } from 'react';
 
 interface Props {
   title: string;
@@ -23,3 +24,18 @@ const ManyProps6 = memo(({ title, subTitle, children, headerColor, bodyColor, fo
   );
 });
 export default ManyProps6;
+
+export const Usage6 = () => (
+  <ManyProps6
+    title="Header"
+    subTitle="Sub"
+    children={<span>Child</span>}
+    headerColor="red"
+    bodyColor="blue"
+    footerColor="green"
+    padding={10}
+    margin={5}
+    width="100px"
+    height="200px"
+  />
+);

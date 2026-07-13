@@ -18,3 +18,17 @@ export const ManyProps1 = ({ id, name, age, email }: Props) => {
   }, [name, id]);
   return <div>{user.name}</div>;
 };
+
+// Usage with >7 props
+export const Usage1 = () => (
+  <ManyProps1
+    id="1"
+    name="John"
+    age={30}
+    email="john@example.com"
+    phone="1234567890"
+    city="New York"
+    country="USA"
+    postalCode="10001"
+  />
+);

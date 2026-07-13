@@ -24,3 +24,20 @@ export const ManyProps11 = ({ width, height, color, bg, border, padding, margin,
   }, [transform]);
   return <div ref={divRef} style={{ width, height, color, backgroundColor: bg, border, padding, margin, boxShadow: shadow ? '0 0 10px rgba(0,0,0,0.5)' : 'none', opacity, transition, zIndex }}>Content</div>;
 };
+
+export const Usage11 = () => (
+  <ManyProps11
+    width={100}
+    height={50}
+    color="red"
+    bg="blue"
+    border="1px solid black"
+    padding={10}
+    margin={5}
+    shadow={true}
+    opacity={0.8}
+    transform="rotate(45deg)"
+    transition="all 0.3s"
+    zIndex={999}
+  />
+);

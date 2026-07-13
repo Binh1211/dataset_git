@@ -1,4 +1,5 @@
-import React, { ReactNode, Children } from 'react';
+import React, { Children } from 'react';
+import type { ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
@@ -17,3 +18,18 @@ export const ManyProps8 = ({ children, flex, direction, wrap, gap, align, justif
   const count = Children.count(children);
   return <div style={{ display: flex ? 'flex' : 'block', flexDirection: direction, flexWrap: wrap ? 'wrap' : 'nowrap', gap, alignItems: align, justifyContent: justify, padding, margin, backgroundColor: bgColor }}>{children}</div>;
 };
+
+export const Usage8 = () => (
+  <ManyProps8
+    children={<div>Child</div>}
+    flex={true}
+    direction="row"
+    wrap={false}
+    gap={10}
+    align="center"
+    justify="space-between"
+    padding={20}
+    margin={10}
+    bgColor="#f0f0f0"
+  />
+);

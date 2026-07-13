@@ -20,3 +20,19 @@ export const ManyProps12 = ({ id, title, body, author, date, tags, likes, commen
   const { theme } = useContext(AppContext);
   return <div style={{ color: theme === 'light' ? '#000' : '#fff' }}>{title}</div>;
 };
+
+export const Usage12 = () => (
+  <ManyProps12
+    id="1"
+    title="Post"
+    body="Content"
+    author="John"
+    date="2024-01-01"
+    tags={['a', 'b']}
+    likes={10}
+    comments={5}
+    shares={2}
+    views={100}
+    isPinned={true}
+  />
+);

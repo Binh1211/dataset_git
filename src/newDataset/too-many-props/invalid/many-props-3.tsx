@@ -25,3 +25,17 @@ export const ManyProps3 = ({ initialCount, min, max, step, label, color, disable
   const [count, dispatch] = useReducer(reducer, initialCount);
   return <div>{label}: {count}</div>;
 };
+
+export const Usage3 = () => (
+  <ManyProps3
+    initialCount={0}
+    min={0}
+    max={10}
+    step={1}
+    label="Counter"
+    color="blue"
+    disabled={false}
+    onChange={(v) => {}}
+    onReset={() => {}}
+  />
+);
