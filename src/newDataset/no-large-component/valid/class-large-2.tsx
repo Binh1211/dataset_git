@@ -1,15 +1,18 @@
 import React, { Component } from "react";
 
+interface Props {
+  title: string;
+}
 interface State {
-  count: number;
+  expanded: boolean;
 }
 
-export class ClassLarge1 extends Component<{}, State> {
-  state = { count: 0 };
+export class ClassLarge2 extends Component<Props, State> {
+  state = { expanded: false };
 
-  componentDidMount() {
-    console.log("mounted");
-  }
+  toggle = () => {
+    this.setState((prev) => ({ expanded: !prev.expanded }));
+  };
 
   render() {
     // 1
@@ -164,12 +167,11 @@ export class ClassLarge1 extends Component<{}, State> {
     // 150
     return (
       <div>
-        <h1>Class Large 1</h1>
-        <button
-          onClick={() => this.setState((prev) => ({ count: prev.count + 1 }))}
-        >
-          {this.state.count}
+        <h2>{this.props.title}</h2>
+        <button onClick={this.toggle}>
+          {this.state.expanded ? "Collapse" : "Expand"}
         </button>
+        {this.state.expanded && <p>More details...</p>}
       </div>
     );
   }
